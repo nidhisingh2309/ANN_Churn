@@ -36,7 +36,7 @@ is_active_member=st.selectbox('Is active member',[0,1])
 
 
 ## Prepare the input data
-input_data={
+input_data=pd.DataFrame({
     'CreditScore':[credit_score],
     
     'Gender':[label_encoder_gender.transform([gender])[0]],
@@ -47,7 +47,7 @@ input_data={
     'HasCrCard':[has_cr_card],
     'IsActiveMember':[is_active_member],
     'EstimatedSalary':[estimated_salary]
-}
+})
 
 ## One hot encode 'Geography'
 geo_encoded=one_hot_encoder_geo.transform([[geography]]).toarray()
